@@ -6,22 +6,22 @@ namespace ClassMethodDemo
 {
     public class CustomerManager
     {
-        public static void Add(Customer customer)
+        public void Add(Customer customer)
         {
             Console.WriteLine("Customer added!");
         }
 
-        public static void Delete(Customer customer)
+        public void Delete(Customer customer)
         {
             Console.WriteLine("Customer deleted!");
         }
 
-        public static void Update(Customer customer)
+        public void Update(Customer customer)
         {
             Console.WriteLine("Customer updated!");
         }
 
-        public static void ListAll(List<Customer> customers)
+        public void ListAll(List<Customer> customers)
         {
             foreach (var customer in customers)
             {

@@ -9,6 +9,7 @@ namespace ClassMethodDemo
         static void Main(string[] args)
         {
             var customer = new Customer();
+            var customerManager=new CustomerManager();
 
             var customers = new List<Customer>();
             var defaultCustomer = new Customer
@@ -39,21 +40,21 @@ namespace ClassMethodDemo
                     customer.City = Console.ReadLine();
                     Console.WriteLine("Müşteri Yaşı:");
                     customer.Age = Convert.ToInt32(Console.ReadLine());
-                    CustomerManager.Add(customer);
+                    customerManager.Add(customer);
                     break;
                 case 2:
-                    CustomerManager.ListAll(customers);
+                    customerManager.ListAll(customers);
                     Console.WriteLine("Silmek istediğiniz müşteriyi id'sini seçiniz:");
                     var selectedCustomer = Convert.ToInt32(Console.ReadLine());
                     customer = customers.FirstOrDefault(x => x.Id == selectedCustomer);
-                    CustomerManager.Delete(customer);
+                    customerManager.Delete(customer);
                     break;
                 case 3:
-                    CustomerManager.ListAll(customers);
+                    customerManager.ListAll(customers);
                     Console.WriteLine("Güncellemek istediğiniz müşteriyi id'sini seçiniz:");
                     selectedCustomer = Convert.ToInt32(Console.ReadLine());
                     customer = customers.FirstOrDefault(x => x.Id == selectedCustomer);
-                    CustomerManager.Update(customer);
+                    customerManager.Update(customer);
                     break;
             }
         }
